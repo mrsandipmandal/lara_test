@@ -25,3 +25,12 @@ Route::middleware(['isLogged'])->group(function () {
 
 
 });
+
+Route::middleware(['check_age'])->group(function () {
+    Route::view('/test2', 'admin.test');
+});
+
+/* Route::get('admin', function () {
+})->middleware('check_age');
+ */
+Route::get('admin')->middleware('check_age');
